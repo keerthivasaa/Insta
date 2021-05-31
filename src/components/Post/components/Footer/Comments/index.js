@@ -8,10 +8,9 @@ import {
     Image,
     Pressable
 } from 'react-native';
-import Post from '../Post';
-import Stories from '../Stories';
+import Post from '../../../../Post';
 
-const Feed = () => {
+const Comments = () => {
 
     const [data, setData] = useState(null)
 
@@ -20,32 +19,28 @@ const Feed = () => {
     }, [])
 
     const getListApi = async () => {
-        await fetch("https://hiit.ria.rocks/videos_api/cdn/com.rstream.crafts?versionCode=40&lurl=Canvas%20painting%20ideas", {
+        await fetch("http://cookbookrecipes.in/test.php", {
             method: 'GET',
         })
-            .then(result => result.json())
-            .then(result => setData(result))
+            // .then(result => result.json())
+            .then(result => console.log(result))
             .catch(error => console.log('error', error))
     }
 
     renderItem = ({ item }) => {
         return (
             <View style={styles.wrapText}>
-                <Text>{item.title}</Text>
-                <Text>{item.channelname}</Text>
-                <Image source={{uri: item.highthumbnail}} />
-                <Image source={{uri: item.lowthumbnail}} />
-                <Image source={{uri: item.mediumthumbnail}} />
+                <Text>{item.username}</Text>
+                <Text>{item.comments}</Text>
             </View>
         )
     }
-
+console.log(data);
     return (
         <SafeAreaView>
             <FlatList
                 data={data}
                 renderItem={({ item }) => <Post post={item} />}
-                ListHeaderComponent={Stories}
             />
 
         </SafeAreaView>
@@ -83,4 +78,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Feed;
+export default Comments;

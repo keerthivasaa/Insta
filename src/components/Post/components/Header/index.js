@@ -5,12 +5,12 @@ import Icon from 'react-native-vector-icons/Entypo';
 import ProfilePicture from '../../../ProfilePicture';
 import styles from './styles';
 
-const Header = ({imageUri, name}) => {
+const Header = ({channelname, highthumbnail}) => {
     return(
         <View style= {styles.container}>
             <View style= {styles.left}>
-                <ProfilePicture uri= {imageUri} size= {50} />
-                <Text style= {styles.name}>{name}</Text>
+                <ProfilePicture uri= {highthumbnail} size= {50} />
+                <Text style= {styles.name}>{channelname}</Text>
             </View>
             
             <View style= {styles.right}>

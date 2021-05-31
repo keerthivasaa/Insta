@@ -8,16 +8,21 @@ import Footer from './components/Footer';
 
 const Post = ({post}) => {
     return(
-        <View key={post.id}>
-            <Header imageUri= {post.user.imageUri} name= {post.user.name}/>
-            <Body imageUri= {post.imageUri} />
+        <View>
+            <Header highthumbnail= {post["high thumbnail"]}  channelname= {post.channelname}/>
+            <Body mediumthumbnail= {post["medium thumbnail"]} />
             <Footer
                  likesCount={post.likes} 
-                 caption={post.caption} 
-                 postedAt={post.createdAt}
+                 title={post.title} 
+                 postedAt={post.createdAt} 
+                 lowthumbnail= {post["low thumbnail"]}
+                 commentUser={post.commentUser}
+                 comments={post.comments}
+
             />
         </View>
     );
-}
+} 
+
 
 export default Post;

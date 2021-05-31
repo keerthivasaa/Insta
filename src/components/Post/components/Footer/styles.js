@@ -24,6 +24,16 @@ const styles = StyleSheet.create({
     postedAt: {
         color: '#8c8c8c',
         margin: 3,
+    }, 
+    image: {
+        width: 20, height: 20,
+        borderRadius: 20,
+    }, 
+    likesContainer: {
+        flexDirection: 'row',
+    }, 
+    readMoreStyle : {
+        color: '#8a8a8a'
     }
 });
 

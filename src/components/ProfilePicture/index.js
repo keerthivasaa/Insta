@@ -4,7 +4,6 @@ import {Image, View} from 'react-native';
 import styles from './styles';
 
 const ProfilePicture = ({uri, size= 70}) => {
-    console.log(uri, '123');
     return(
         <View style = {[styles.container, {width: size + 6, height: size + 6 }]}>
             <Image 
